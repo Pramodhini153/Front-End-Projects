@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        background: rgb(158, 245, 240);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .calculator{
+        background: rgb(53, 73, 95);
+        padding: 20px;
+        border-radius: 25px;
+        padding-bottom: 40px;
+    }
+    .calculator form input{
+        border: 0;
+        outline: 0;
+        height: 50px;
+        width:50px;
+        border-radius: 10px;
+        box-shadow: -4px -4px 10px rgba(255,255,255,0.1),5px 5px 15px rgba(0,0,0,0.2);
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 8px;
+    }
+    form .text{
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0px;
+        box-shadow: none;
+    }
+    form .text input{
+        text-align: right;
+        flex: 1;
+        font-size: 40px;
+        box-shadow: none;
+    }
+    form .button .equalto{
+        width:126px;
+
+    }
+    form .button .operator{
+        color:rgb(44, 206, 192);
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="text">
+                    <input name="text" type="text" />
+                </div>
+                <div class="button">
+                    <input type="button" value="AC" class="operator" onclick="text.value='' "/>
+                    <input type="button" value="DEL" class="operator" onclick="text.value = text.value.toString().slice(0,-1)"/>
+                    <input type="button" value="." class="operator" onclick="text.value+='.' "/>
+                    <input type="button" value="/" class="operator" onclick="text.value+='/' "/>
+                </div>
+                <div class="button">
+                    <input type="button" value="7" onclick="text.value+='7' "/>
+                    <input type="button" value="8" onclick="text.value+='8' "/>
+                    <input type="button" value="9" onclick="text.value+='9' "/>
+                    <input type="button" value="*" class="operator" onclick="text.value+='*' "/>
+                </div>
+                <div class="button">
+                    <input type="button" value="4" onclick="text.value+='4' "/>
+                    <input type="button" value="5" onclick="text.value+='5' "/>
+                    <input type="button" value="6" onclick="text.value+='6' "/>
+                    <input type="button" value="-" class="operator" onclick="text.value+='-' "/>
+                </div>
+                <div class="button">
+                    <input type="button" value="1" onclick="text.value+='1' "/>
+                    <input type="button" value="2" onclick="text.value+='2' "/>
+                    <input type="button" value="3" onclick="text.value+='3' "/>
+                    <input type="button" value="+" class="operator" onclick="text.value+='+' "/>
+                </div>
+                <div class="button">
+                    <input type="button" value="00" onclick="text.value+='00' "/>
+                    <input type="button" value="0" onclick="text.value+='0' "/>
+                    <input type="button" value="=" class="equalto operator" onclick="text.value=eval(text.value) "/>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
